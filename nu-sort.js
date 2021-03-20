@@ -33,6 +33,44 @@ const sortItems = objArr => {
   })); 
 } 
 
+function sortArray(array) {
+  var temp = 0;
+  for (var i = 0; i < array.length; i++) {
+    for (var j = i; j < array.length; j++) {
+      if (array[j] < array[i]) {
+        temp = array[j];
+        array[j] = array[i];
+        array[i] = temp;
+      }
+    }
+  }
+  return array;
+}
+
+console.log(sortArray([3,1,2]));
+
+
+
+
+
+
+const numbers = [1, 2, 5, 3, 2];
+
+const mySortingFunction  = (a, b) => {
+  return (b > a) ? -1 : a > b ? 1 : 0
+}
+
+
+const sortNumbers = (arr) => {
+  return ([...arr].sort(mySortingFunction))
+
+}
+
+
+console.log(sortNumbers(numbers));
+
+
+
 console.log(sortItems(instruments)[0].id); 
 console.log(instruments); 
 
